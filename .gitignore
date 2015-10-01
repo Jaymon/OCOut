@@ -1,0 +1,6 @@
+.DS_Store
+Example/Pods/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.orig
+
