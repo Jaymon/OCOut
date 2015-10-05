@@ -23,6 +23,32 @@
     OCOUT(range);
     
     
+    OCBREAK(5);
+    
+    OCHERE();
+    
+    OCTRACE();
+    
+    ///NSLog(@"%@", [NSThread callStackSymbols]);
+    
+    
+//    for (NSString *o in [NSThread callStackSymbols]) {
+//        ///NSLog(@"%@", o);
+//        NSString *pattern = @"\\[[^\\]]+\\]";
+//        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+//        NSArray *matches = [regex matchesInString:o options:0 range:NSMakeRange(0, o.length)];
+//        for (NSTextCheckingResult *match in matches) {
+//            
+//            NSLog(@"%@", [o substringWithRange:match.range]);
+//        }
+//    }
+    
+//    for (NSString *o in [NSThread callStackSymbols]) {
+//        ///NSLog(@"%@", o);
+//        LOG_EXPR(o);
+//    }
+    
+    
     ///NSString *_FN_ = [NSString stringWithUTF8String:__FILE__];
     ///NSString *_STR_ = [NSString stringWithFormat:@"%s = %@ (%@:%d)", STRINGIFICATION(str), str, _FN_, __LINE__];
     ///fprintf(stderr, "%s", [_STR_ UTF8String]);
