@@ -65,10 +65,13 @@ NSArray *OC_trace();
  *  print _LINECOUNT_ breaks, basically a line of equal signs
  */
 #define OCBREAK(_LINECOUNT_) do{\
+    NSString *_STR_ = @"";\
     for(int _I_ = 0; _I_ < _LINECOUNT_; _I_++) {\
-        NSString *_STR_ = [@"" stringByPaddingToLength:60 withString: @"=" startingAtIndex:0];\
+        _STR_ = [@"" stringByPaddingToLength:60 withString: @"*" startingAtIndex:0];\
         _PRINT(_STR_);\
     }\
+    _STR_ = [NSString stringWithFormat:@"(%@:%d)", _FILENAME(), __LINE__];\
+    _PRINT(_STR_);\
 }while(0)
 
 /**

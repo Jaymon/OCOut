@@ -1,3 +1,4 @@
+# http://guides.cocoapods.org/syntax/podspec.html
 Pod::Spec.new do |s|
   s.name = 'OCOut'
   s.version = '0.1.0'

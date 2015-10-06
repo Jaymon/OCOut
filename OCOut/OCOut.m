@@ -13,7 +13,7 @@ NSArray *OC_trace()
         NSRegularExpression *_REGEX_ = [NSRegularExpression regularExpressionWithPattern:_PATTERN_ options:0 error:nil];
         NSArray *_MS_ = [_REGEX_ matchesInString:_O_ options:0 range:NSMakeRange(0, _O_.length)];
         for (NSTextCheckingResult *_M_ in _MS_) {
-            [calls addObject:[NSString stringWithFormat:@"%d. %@", _I_, [_O_ substringWithRange:_M_.range]]];
+            [calls addObject:[NSString stringWithFormat:@"%d.\t%@", _I_, [_O_ substringWithRange:_M_.range]]];
             _I_++;
         }
     }
