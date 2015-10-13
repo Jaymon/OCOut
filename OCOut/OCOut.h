@@ -9,23 +9,7 @@
 NSArray *OC_trace();
 
 
-#ifndef DEBUG
-
-////////////////////////////////////////////////////////////////////////////////
-// debug isn't active so just ignore everything
-#pragma mark - disabled
-////////////////////////////////////////////////////////////////////////////////
-
-#define _STRINGIFICATION(_S_)
-#define _FILENAME()
-#define _PRINT(_STR_)
-#define OCOUT(_X_)
-#define OCBREAK(_LINECOUNT_)
-#define OCHERE()
-#define OCTRACE()
-
-
-#else
+#ifdef DEBUG
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - internal
@@ -48,7 +32,7 @@ NSArray *OC_trace();
  *  given any variable, print it out
  */
 #define OCOUT(_X_) do{\
-    __typeof__(_X_) _Y_ = (_X_);\
+__typeof__(_X_) _Y_ = (_X_);\
     const char *_TYPE_CODE_ = @encode(__typeof__(_X_));\
     NSString *_VAL_ = VTPG_DDToStringFromTypeAndValue(_TYPE_CODE_, &_Y_);\
     if(_VAL_) {\
@@ -83,7 +67,7 @@ NSArray *OC_trace();
 }while(0)
 
 /**
- *  print out a simpler stack trace
+ *  print out a simple stack trace
  */
 #define OCTRACE() do{\
     for (NSString *_STR_ in OC_trace()) {\
@@ -92,6 +76,22 @@ NSArray *OC_trace();
     NSString *_STR_ = [NSString stringWithFormat:@"(%@:%d)", _FILENAME(), __LINE__];\
     _PRINT(_STR_);\
 }while(0)
+
+
+#else
+
+////////////////////////////////////////////////////////////////////////////////
+// debug isn't active so just ignore everything
+#pragma mark - disabled
+////////////////////////////////////////////////////////////////////////////////
+
+#define _STRINGIFICATION(_S_)
+#define _FILENAME()
+#define _PRINT(_STR_)
+#define OCOUT(_X_)
+#define OCBREAK(_LINECOUNT_)
+#define OCHERE()
+#define OCTRACE()
 
 
 #endif
