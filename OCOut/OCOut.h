@@ -21,7 +21,7 @@ NSArray *OC_trace();
 // // http://stackoverflow.com/a/1354736
 #define _FILENAME() [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] stringByDeletingPathExtension]
 
-#define _PRINT(_STR_) fprintf(stderr, "%s\n", [_STR_ UTF8String])
+#define _PRINT(_STR_) fprintf(stderr, "\n%s\n\n", [_STR_ UTF8String])
 
 
 ////////////////////////////////////////////////////////////////////////////////
