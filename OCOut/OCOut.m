@@ -20,3 +20,6 @@ NSArray *OC_trace()
     
     return calls;
 }
+
+@implementation OCOut
+@end

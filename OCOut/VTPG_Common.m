@@ -107,3 +107,7 @@ NSString * VTPG_DDToStringFromTypeAndValue(const char * typeCode, void * value) 
 	//we don't know how to convert this typecode into an NSString
 	return nil;
 }
+
+// added by Jay
+@implementation VTPG_Common
+@end
