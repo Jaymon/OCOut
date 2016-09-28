@@ -29,6 +29,9 @@
     
     OCTRACE();
     
+    OCOUT(@"A STANDARD NSSTRING WITH NO VARIABLE");
+    OCOUT("A STANDARD STRING WITH NO VARIABLE");
+    
     ///NSLog(@"%@", [NSThread callStackSymbols]);
     
     

@@ -36,7 +36,13 @@ __typeof__(_X_) _Y_ = (_X_);\
     const char *_TYPE_CODE_ = @encode(__typeof__(_X_));\
     NSString *_VAL_ = VTPG_DDToStringFromTypeAndValue(_TYPE_CODE_, &_Y_);\
     if(_VAL_) {\
-        NSString *_STR_ = [NSString stringWithFormat:@"%s = %@ (%@:%d)", _STRINGIFICATION(_X_), _VAL_, _FILENAME(), __LINE__];\
+        NSString *_STR_ = @"";\
+        NSString *_XNAME_ = [NSString stringWithFormat:@"%s", _STRINGIFICATION(_X_)];\
+        if([_XNAME_ hasSuffix:@"\""]) {\
+            _STR_ = [NSString stringWithFormat:@"%@ (%@:%d)", _VAL_, _FILENAME(), __LINE__];\
+        } else {\
+            _STR_ = [NSString stringWithFormat:@"%@ = %@ (%@:%d)", _XNAME_, _VAL_, _FILENAME(), __LINE__];\
+        }\
         _PRINT(_STR_);\
     } else {\
         NSLog(@"Unknown _TYPE_CODE_: %s for expression %s in function %s, file %s, line %d", _TYPE_CODE_, #_X_, __func__,  __FILE__, __LINE__);\
