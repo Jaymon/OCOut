@@ -101,3 +101,7 @@ __typeof__(_X_) _Y_ = (_X_);\
 
 
 #endif
+
+@interface OCOut : NSObject
+@end
+
